@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - AgriSmart{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Dashboard 🌾</h2>
+
+    <div class="row g-4 text-center">
+        <div class="col-6 col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <i class="bi bi-cloud-sun" style="font-size: 2rem;"></i>
+                    <h5 class="mt-2">Weather</h5>
+                    <a href="#" url 'weather_home' " class="stretched-link"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 col-md-4">
+            <div class="card shadow-sm">
+                <h5 class="mt-2">Crop Detector</h5>
+                    <a href="#" class="stretched-link"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <i class="bi bi-shop" style="font-size: 2rem;"></i>
+                    <h5 class="mt-2">Marketplace</h5>
+                    <a href="#" class="stretched-link"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Balance Section -->
+    <div class="card shadow-sm text-center mt-5 p-4">
+        <h4>Main Balance</h4>
+        <h2 class="text-success">$76.75</h2> <!-- You can dynamically fetch user's balance later -->
+    </div>
+
+</div>
+{% endblock %}
+
+

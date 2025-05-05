@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Weather Forecast 🌦️</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="city" placeholder="Enter City Name" class="form-control w-50 d-inline" required>
+    <button class="btn btn-success">Check Weather</button>
+</form>
+
+{% if weather_data %}
+<div class="card mt-4" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{ weather_data.name }}</h5>
+        <p class="card-text">
+            🌡️ Temperature: {{ weather_data.main.temp }} °C <br>
+🌥️ Weather: {{ weather_data.weather.0.description }} <br>
+            💨 Wind Speed: {{ weather_data.wind.speed }} m/s <br>
+            🌅 Sunrise: {{ weather_data.sys.sunrise|date:"H:i:s" }} <br>
+            🌇 Sunset: {{ weather_data.sys.sunset|date:"H:i:s" }}
+        </p>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Crop Detector{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Upload Crop Image 🌿</h2>
+
+    <form method="POST" enctype="multipart/form-data" class="text-center">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-primary mt-2" type="submit">Detect Crop</button>
+    </form>
+
+    {% if prediction %}
+        <div class="alert alert-success mt-4" role="alert">
+            <h4>Prediction: {{ prediction }}</h4>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
